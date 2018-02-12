@@ -15,6 +15,7 @@ import seedu.addressbook.commands.AddCommand;
 import seedu.addressbook.commands.ClearCommand;
 import seedu.addressbook.commands.Command;
 import seedu.addressbook.commands.DeleteCommand;
+import seedu.addressbook.commands.EditCommand;
 import seedu.addressbook.commands.ExitCommand;
 import seedu.addressbook.commands.FindCommand;
 import seedu.addressbook.commands.HelpCommand;
@@ -102,6 +103,9 @@ public class Parser {
         case HelpCommand.COMMAND_WORD: // Fallthrough
         default:
             return new HelpCommand();
+
+            case EditCommand.COMMAND_WORD:
+                return prepareEdit(arguments);
         }
     }
 
@@ -176,6 +180,16 @@ public class Parser {
         }
     }
 
+    private Command prepareEdit(String args) {
+        try {
+            final int targetIndex = parseArgsAsDisplayedIndex(args);
+            return new DeleteCommand(targetIndex);
+        } catch (ParseException pe) {
+            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
+        } catch (NumberFormatException nfe) {
+            return new IncorrectCommand(MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+        }
+    }
     /**
      * Parses arguments in the context of the view command.
      *
