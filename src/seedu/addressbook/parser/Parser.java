@@ -183,7 +183,7 @@ public class Parser {
     private Command prepareEdit(String args) {
         try {
             final int targetIndex = parseArgsAsDisplayedIndex(args);
-            return new DeleteCommand(targetIndex);
+            return new EditCommand(targetIndex);
         } catch (ParseException pe) {
             return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
         } catch (NumberFormatException nfe) {
