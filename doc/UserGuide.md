@@ -51,10 +51,14 @@ Examples:
 
 ### Editing a person's name: `edit`
 Edits a specified person's name from the address book.<br>
-Format: `edit INDEX NEW_NAME`
+Format: `edit INDEX n/NEW_NAME`
 
 > Edits the person's name at the specified `INDEX`
   The index refers to the index number shown in the most recent listing.
+  
+Examples:
+* `edit 2 n/John Doe`
+* `edit 23 n/ Betsy Crowe`
 
 
 ### Listing all persons : `list`
