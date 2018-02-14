@@ -100,6 +100,14 @@ public class AddressBook {
     }
 
     /**
+     * Edits the equivalent person's name from the address book.
+     */
+    public void editName(int indexToEdit, String nameToEdit) throws PersonNotFoundException {
+        indexToEdit = indexToEdit - 1;
+        allPersons.edit(indexToEdit, nameToEdit);
+    }
+
+    /**
      * Clears all persons and tags from the address book.
      */
     public void clear() {
