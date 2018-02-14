@@ -145,7 +145,7 @@
 ##########################################################
 
   # sorts properly
-  add Alana Ray  p/555555 e/alana@not.a.real.potato pa/555, epsilon street t/tubers t/starchy
+  add Alana Ray p/555555 e/alana@not.a.real.potato pa/555, epsilon street t/tubers t/starchy
   list
   sort
 
