@@ -123,6 +123,16 @@ public class UniquePersonList implements Iterable<Person> {
     }
 
     /**
+     * Edits the equivalent person's name from the list.
+     *
+     * @throws PersonNotFoundException if no such person could be found in the list.
+     */
+    public void edit(int indexToEdit, String nameToEdit) throws PersonNotFoundException {
+        final Person personFound = internalList.get(indexToEdit);
+        personFound.editName(nameToEdit);
+    }
+
+    /**
      * Clears all persons in list.
      */
     public void clear() {
