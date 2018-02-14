@@ -32,7 +32,9 @@ public class Parser {
 
     public static final Pattern PERSON_INDEX_ARGS_FORMAT = Pattern.compile("(?<targetIndex>.+)");
 
-    public static final Pattern PERSON_NAME_EDIT_ARGS_FORMAT = Pattern.compile ("(?<targetIndex>.+)" + " (?<name>[^/]+)");
+    public static final Pattern PERSON_NAME_EDIT_ARGS_FORMAT =
+            Pattern.compile ("(?<targetIndex>.+)"
+                    + " (?<name>[^/]+)");
 
     public static final Pattern KEYWORDS_ARGS_FORMAT =
             Pattern.compile("(?<keywords>\\S+(?:\\s+\\S+)*)"); // one or more keywords separated by whitespace
@@ -84,6 +86,9 @@ public class Parser {
         case DeleteCommand.COMMAND_WORD:
             return prepareDelete(arguments);
 
+        case EditCommand.COMMAND_WORD:
+            return prepareEdit(arguments);
+
         case ClearCommand.COMMAND_WORD:
             return new ClearCommand();
 
@@ -106,8 +111,7 @@ public class Parser {
         default:
             return new HelpCommand();
 
-            case EditCommand.COMMAND_WORD:
-                return prepareEdit(arguments);
+
         }
     }
 
@@ -181,16 +185,23 @@ public class Parser {
             return new IncorrectCommand(MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
         }
     }
-
+    /**
+     * Parses arguments in the context of the edit person command.
+     *
+     * @param args full command args string
+     * @return the prepared command
+     */
     private Command prepareEdit(String args) {
-        try {
-            final int targetIndex = parseArgsAsDisplayedIndex(args);
-            return new EditCommand(targetIndex);
-        } catch (ParseException pe) {
-            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
-        } catch (NumberFormatException nfe) {
-            return new IncorrectCommand(MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+        final Matcher matcher = PERSON_NAME_EDIT_ARGS_FORMAT.matcher(args.trim());
+        // Validate arg string format
+        if (!matcher.matches()) {
+            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
         }
+            return new EditCommand(
+                    Integer.parseInt(matcher.group("targetIndex")),
+
+                    matcher.group("name")
+            );
     }
     /**
      * Parses arguments in the context of the view command.
