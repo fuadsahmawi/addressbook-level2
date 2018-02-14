@@ -81,6 +81,9 @@ public class UniquePersonList implements Iterable<Person> {
         return Collections.unmodifiableList(internalList);
     }
 
+    /**
+     * Returns a modifiable java List view with elements cast as mutable {@link Person}s.
+     */
     public List<Person> mutableListView() { return internalList;}
 
     /**
