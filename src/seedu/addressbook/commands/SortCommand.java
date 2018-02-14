@@ -23,6 +23,6 @@ public class SortCommand extends Command {
     public CommandResult execute() {
         List<Person> allPersons = addressBook.getAllPersons().mutableListView();
         allPersons.sort(Comparator.comparing(c -> c.getName().toString()));
-        return new CommandResult(getMessageForPersonListShownSummary(allPersons), allPersons);
+        return new CommandResult(getMessageForPersonSortShownSummary(allPersons), allPersons);
     }
 }
