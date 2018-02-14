@@ -14,7 +14,7 @@ public class Name {
     public static final String EXAMPLE = "John Doe";
     public static final String MESSAGE_NAME_CONSTRAINTS = "Person names should be spaces or alphabetic characters";
     public static final String NAME_VALIDATION_REGEX = "[\\p{Alpha} ]+";
-    public final String fullName;
+    public String fullName;
 
     /**
      * Validates given name.
@@ -42,6 +42,8 @@ public class Name {
     public List<String> getWordsInName() {
         return Arrays.asList(fullName.split("\\s+"));
     }
+
+    public void editName(String nameToEdit) { this.fullName = nameToEdit; }
 
     @Override
     public String toString() {
