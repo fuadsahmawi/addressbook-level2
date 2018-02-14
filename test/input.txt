@@ -60,7 +60,9 @@
 
   # should edit correctly
   list
-  edit 3 Charles
+  edit 3 n/Charles Dickson
+  list
+  edit 3 n/Charlie Dickson
 
 
 ##########################################################

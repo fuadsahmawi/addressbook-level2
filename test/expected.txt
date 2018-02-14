@@ -147,8 +147,20 @@
 || 
 || 5 persons listed!
 || ===================================================
-|| Enter command: || [Command entered:  edit 3 Charles]
-|| Edited Person: Charles Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
+|| Enter command: || [Command entered:  edit 3 n/Charles Dickson]
+|| Edited Person: Charles Dickson Phone: (private) 333333 Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
+|| ===================================================
+|| Enter command: || [Command entered:  list]
+|| 	1. Adam Brown Phone: 111111 Email: adam@gmail.com Address: 111, alpha street Tags: 
+|| 	2. Betsy Choo Tags: [secretive]
+|| 	3. Charles Dickson Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
+|| 	4. Dickson Ee Phone: 444444 Address: 444, delta street Tags: [friends]
+|| 	5. Esther Potato Phone: 555555 Email: esther@not.a.real.potato Tags: [tubers][starchy]
+|| 
+|| 5 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  edit 3 n/Charlie Dickson]
+|| Edited Person: Charlie Dickson Phone: (private) 333333 Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
 || ===================================================
 || Enter command: || [Command entered:  view]
 || Invalid command format! 
