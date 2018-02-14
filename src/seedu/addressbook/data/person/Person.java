@@ -66,6 +66,11 @@ public class Person implements ReadOnlyPerson {
         tags.setTags(replacement);
     }
 
+    /**
+     * Edit this person's name with the replacement name.
+     */
+    public void editName(String nameToEdit) {this.name.editName(nameToEdit); }
+
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
