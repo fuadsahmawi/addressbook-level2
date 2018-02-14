@@ -299,7 +299,7 @@
 || 	1. Betsy Choo Tags: [secretive]
 || 	2. Dickson Ee Phone: 444444 Address: 444, delta street Tags: [friends]
 || 	3. Alana Ray Phone: 555555 Email: alana@not.a.real.potato Tags: [tubers][starchy]
-||
+|| 
 || 3 persons listed!
 || ===================================================
 || Enter command: || [Command entered:  sort]
