@@ -34,7 +34,7 @@ public class Parser {
 
     public static final Pattern PERSON_NAME_EDIT_ARGS_FORMAT =
             Pattern.compile ("(?<targetIndex>.+)"
-                    + " (?<name>[^/]+)");
+                    + " n/(?<name>[^/]+)");
 
     public static final Pattern KEYWORDS_ARGS_FORMAT =
             Pattern.compile("(?<keywords>\\S+(?:\\s+\\S+)*)"); // one or more keywords separated by whitespace
@@ -195,7 +195,7 @@ public class Parser {
         final Matcher matcher = PERSON_NAME_EDIT_ARGS_FORMAT.matcher(args.trim());
         // Validate arg string format
         if (!matcher.matches()) {
-            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
+            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCommand.MESSAGE_USAGE));
         }
             return new EditCommand(
                     Integer.parseInt(matcher.group("targetIndex")),

@@ -15,7 +15,7 @@ public class EditCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Edits the person's name identified by the index number used in the last person listing.\n"
             + "Parameters: INDEX\n"
-            + "Example: " + COMMAND_WORD + " 1" + " Susan";
+            + "Example: " + COMMAND_WORD + " 1" + " n/Susan";
 
     public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Person: %1$s";
 
