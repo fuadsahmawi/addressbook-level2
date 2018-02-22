@@ -41,14 +41,34 @@ public class UtilsTest {
     @Test
     public void utils_isAnyNull_returnsTrue() {
         
-        //only one object
+        //only one null object
         assertTrue(isAnyNull((Object) null));
         
-        //multiple objects
+        //multiple null objects
         assertTrue(isAnyNull(null, null));
         assertTrue(isAnyNull(null, null, null));
         assertTrue(isAnyNull(null, null ,null, null));
         
+        //multiple null + non-null objects
+        assertTrue(isAnyNull("a", null, "b"));
+        assertTrue(isAnyNull(1, "a", "abc", null));
+        
+    }
+
+    @Test
+    public void utils_isAnyNull_returnsFalse() {
+
+        //empty list
+        assertFalse(isAnyNull());
+        
+        //one object
+        assertFalse(isAnyNull("a"));
+
+        //multiple objects
+        assertFalse(isAnyNull("a", "b"));
+        assertFalse(isAnyNull(1, "abc", "a", "b", 2));
+        assertFalse(isAnyNull("d", "e", 3, 5, 7));
+
     }
 
     private void assertAreUnique(Object... objects) {
